@@ -10,14 +10,14 @@ DECLARE @comando as varchar(255)
 DECLARE @destino as varchar(30)
 DECLARE @SQL VARCHAR(MAX)
 SET @data=replace(convert(varchar(20),getdate() ,103),'/','')
-SET @caminho='C:\Curso_Sql\Database\Backup\'
+SET @caminho='C:\caminho\do\Backup\'
 SET @nome_bk='AUTO_BK-FULL-'
 SET @extensao='.BAK'''
-SET @bd='AULA_BK'
+SET @bd='MEU_BANCO_BK'
 SET @comando='BACKUP DATABASE ' 
 SET @destino=' TO DISK =N'''
 --SINTAXE 
---BACKUP DATABASE AULA_BK TO DISK =N'C:\Cursos\Database\BK\AULA_BK-FULL-28092017.BAK'
+--BACKUP DATABASE MEU_BANCO_BK TO DISK = N'C:\caminho\do\Backup\AULA_BK-FULL-28092017.BAK'
 --PRINT @comando+@bd+@destino+@caminho+@nome_bk+@data+@extensao
 SET @SQL=@comando+@bd+@destino+@caminho+@nome_bk+@data+@extensao
 EXEC(@SQL)
